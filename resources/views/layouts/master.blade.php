@@ -11,6 +11,10 @@
 </head>
 <body>
 
+  <div class="container">
+    @include('layouts/flash-message')
+</div>
+
       <div class="container">
 
             @yield('links')

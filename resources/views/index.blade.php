@@ -18,7 +18,7 @@
 
 @section('data')
     <h1>Names and emails / View Page</h1>
-    <table class="table table-dark">
+    <table class="table table-striped table-dark">
         <thead>
             <td>id</td>
             <td>Name</td>
@@ -32,6 +32,8 @@
                     <td class="inner-table">{{ $forms->name }}</td>
                     <td class="inner-table">{{ $forms->email }}</td>
                     <td class="inner-table">{{ $forms->created_at }}</td>
+                    <td><a href="{{action('FormController@edit', $forms['id'])}}" class="btn btn-warni
+                        ng">Edit</a></td>
                 </tr>
             @endforeach
         </tbody>

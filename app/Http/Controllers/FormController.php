@@ -42,7 +42,7 @@ class FormController extends Controller
             'email' => $request->get('email')
         ]);
 
-            return redirect('forms');
+            return redirect('forms')->with('success','Your data was added successfully!');
 
     }
 
