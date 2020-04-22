@@ -17,7 +17,7 @@
 @section('form')
 
 <div class="container">
-  <h2>Form</h2>
+  <h2>Form / Create Page</h2>
   <form method="POST" action="/create">
     <div class="form-group">
         <label for="name">Name:</label>

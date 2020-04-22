@@ -15,10 +15,10 @@
     </nav>
 @endsection
 
-47
+
 @section('data')
-    <h1>Names and emails</h1>
-    <table>
+    <h1>Names and emails / View Page</h1>
+    <table class="table table-dark">
         <thead>
             <td>id</td>
             <td>Name</td>
@@ -31,6 +31,7 @@
                     <td class="inner-table">{{ $forms->id }}</td>
                     <td class="inner-table">{{ $forms->name }}</td>
                     <td class="inner-table">{{ $forms->email }}</td>
+                    <td class="inner-table">{{ $forms->created_at }}</td>
                 </tr>
             @endforeach
         </tbody>
