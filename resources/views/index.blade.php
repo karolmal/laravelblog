@@ -31,7 +31,7 @@
                     <td class="inner-table">{{ $forms->id }}</td>
                     <td class="inner-table">{{ $forms->name }}</td>
                     <td class="inner-table">{{ $forms->email }}</td>
-                    <td class="inner-table">{{ $forms->created_at }}</td>
+                    <td class="inner-table">{{ $forms->created_at->diffForHumans() }}</td>
                     <td><a href="{{action('FormController@edit', $forms['id'])}}" class="btn btn-warning">Edit</a></td>
                     <td><a href="{{action('FormController@destroy', $forms['id'])}}" class="btn btn-danger">Delete</a></td>
                 </tr>
