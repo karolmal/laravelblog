@@ -18,7 +18,7 @@
 
 <div class="container">
   <h2>Form</h2>
-  <form method="POST" action="{{ config('app.url')}}/forms/create">
+  <form method="POST" action="/create">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" placeholder="name" name="name">

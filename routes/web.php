@@ -25,9 +25,11 @@ Route::get('/view', function () {
 */
 Route::get('/', 'FormController@index')->name('form.index');
 
+Route::POST('/create', 'FormController@store')->name('form.create');
 
 
-Route::resource('/forms','FormController');
+
+ Route::resource('/forms','FormController');
 
 
 

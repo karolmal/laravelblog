@@ -42,7 +42,7 @@ class FormController extends Controller
             'email' => $request->get('email')
         ]);
 
-            return redirect('index');
+            return redirect('forms');
 
     }
 
