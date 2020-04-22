@@ -4,8 +4,8 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
          <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="{{ route('create') }}">Create</a>
-                <a href="{{ route('view') }}">View</a>
+              <a href="{{ URL::to('forms') }}">View All</a></li>
+              <a href="{{ URL::to('forms/create') }}">Create</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link">Exit</a>
@@ -18,7 +18,7 @@
 
 <div class="container">
   <h2>Form</h2>
-  <form method="POST" action="/create">
+  <form method="POST" action="{{ config('app.url')}}/forms/create">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" placeholder="name" name="name">

@@ -15,7 +15,7 @@ class FormController extends Controller
     {
         $forms = \App\Form::all();
 
-        return view('create', ['alldetails' => $forms]);
+        return view('index', ['allforms' => $forms]);
     }
 
     /**
@@ -42,7 +42,7 @@ class FormController extends Controller
             'email' => $request->get('email')
         ]);
 
-            return redirect('/create');
+            return redirect('index');
 
     }
 

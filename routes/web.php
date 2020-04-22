@@ -13,22 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('create');
-})->name('create');
+    return view('index');
+})->name('index');
 
-
+/*
 Route::get('/view', function () {
     return view('view');
 })->name('view');
-
-Route::resource('create','FormController');
-
-/*
-Route::post('/action', function () {
-    return view('index');
-});
 */
+Route::get('/', 'FormController@index')->name('form.index');
+
+
+
+Route::resource('/forms','FormController');
+
 
 
 
