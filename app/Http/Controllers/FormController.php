@@ -65,7 +65,9 @@ class FormController extends Controller
      */
     public function edit($id)
     {
-        //
+        $forms = \App\Form::find($id);
+        return view('edit', ['forms'=> $forms]);
+        // return view('edit', compact('form'));
     }
 
     /**
@@ -77,7 +79,18 @@ class FormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+        ]);
+
+        $forms = \App\Form::find($id);
+        $forms->name =  $request->get('name');
+        $forms->email = $request->get('email');
+        $forms->save();
+
+        return redirect('forms')->with('success', 'Contact updated!');
+    }
     }
 
     /**
@@ -86,8 +99,11 @@ class FormController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     function destroy($id)
     {
-        //
+        $forms = \App\Form::find($id);
+        $forms->delete();
+
+        return redirect('forms')->with('success', 'Contact deleted!');
     }
-}
+

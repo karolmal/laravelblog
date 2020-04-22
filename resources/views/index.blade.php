@@ -17,13 +17,14 @@
 
 
 @section('data')
-    <h1>Names and emails / View Page</h1>
+    <h1 class="text-center">Names and emails / View Page</h1>
     <table class="table table-striped table-dark">
         <thead>
             <td>id</td>
             <td>Name</td>
             <td>Email</td>
             <td>Time</td>
+            <td>Likes Count</td>
         </thead>
         <tbody>
             @foreach ($allforms as $forms)
@@ -32,6 +33,7 @@
                     <td class="inner-table">{{ $forms->name }}</td>
                     <td class="inner-table">{{ $forms->email }}</td>
                     <td class="inner-table">{{ $forms->created_at->diffForHumans() }}</td>
+                    <td class="inner-table"><button class="btn btn-info">{{ $forms->likes_count }}</button></td>
                     <td><a href="{{action('FormController@edit', $forms['id'])}}" class="btn btn-warning">Edit</a></td>
                     <td><a href="{{action('FormController@destroy', $forms['id'])}}" class="btn btn-danger">Delete</a></td>
                 </tr>

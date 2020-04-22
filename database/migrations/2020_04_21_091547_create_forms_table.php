@@ -17,6 +17,7 @@ class CreateFormsTable extends Migration
             $table->id('id');
             $table->string('name');
             $table->string('email');
+            $table->integer('likes_count')->default(0);
             $table->timestamps();
         });
     }
