@@ -24,6 +24,7 @@ Route::get('/view', function () {
 })->name('view');
 */
 
+/*
 Route::GET('/', 'FormController@index')->name('index');
 Route::GET('/forms', 'FormController@index')->name('form.index');
 
@@ -32,16 +33,21 @@ Route::POST('/create', 'FormController@store')->name('form.create');
 Route::GET('forms/{id}/edit', 'FormController@edit')->name('form.edit');
 
 Route::put('/update/{id}','FormController@update')->name('form.update');
+*/
 
 Route::DELETE('/forms/{id}','FormController@destroy')->name('form.destroy');
 
+Route::POST('/create', 'FormController@store')->name('form.create');
 
 
 
 
 
 
- // Route::resource('forms','FormController');
+
+
+ Route::resource('forms','FormController');
+
 
 
 

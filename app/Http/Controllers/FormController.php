@@ -106,6 +106,3 @@ class FormController extends Controller
         return redirect('forms')->with('success', 'Contact deleted!');
     }
 }
-
-    
-
