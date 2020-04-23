@@ -67,7 +67,7 @@ class FormController extends Controller
     {
         $forms = \App\Form::find($id);
         return view('edit', ['forms'=> $forms]);
-        // return view('edit', compact('form'));
+        
     }
 
     /**
@@ -91,7 +91,7 @@ class FormController extends Controller
 
         return redirect('forms')->with('success', 'Contact updated!');
     }
-    }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -99,11 +99,13 @@ class FormController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     function destroy($id)
+      function destroy($id)
     {
         $forms = \App\Form::find($id);
         $forms->delete();
 
         return redirect('forms')->with('success', 'Contact deleted!');
     }
+
+    
 

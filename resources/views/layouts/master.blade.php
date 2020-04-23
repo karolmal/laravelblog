@@ -23,6 +23,12 @@
 
       <div class="container">
 
+        @yield('editform')
+
+      </div>
+
+      <div class="container">
+
         @yield('form')
 
       </div>

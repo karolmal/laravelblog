@@ -23,13 +23,19 @@ Route::get('/view', function () {
     return view('view');
 })->name('view');
 */
-Route::get('/', 'FormController@index')->name('form.index');
+Route::GET('/', 'FormController@index')->name('form.index');
 
 Route::POST('/create', 'FormController@store')->name('form.create');
 
-Route::get('/edit', 'FormController@edit')->name('form.edit');
+Route::GET('/edit', 'FormController@edit')->name('form.edit');
 
-Route::put('/update/{id}','FormController@update')->name('form.update');
+Route::PUT('/update{$id}','FormController@update')->name('form.update');
+
+Route::DELETE('/delete{$id}','FormController@destroy')->name('form.destroy');
+
+
+
+
 
 
 
