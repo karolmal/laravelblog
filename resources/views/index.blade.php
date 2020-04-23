@@ -35,7 +35,14 @@
                     <td class="inner-table">{{ $forms->created_at->diffForHumans() }}</td>
                     <td class="inner-table"><button class="btn btn-info">{{ $forms->likes_count }}</button></td>
                     <td><a href="{{action('FormController@edit', $forms['id'])}}" class="btn btn-warning">Edit</a></td>
-                    <td><a href="{{action('FormController@destroy', $forms['id'])}}" class="btn btn-danger">Delete</a></td>
+                    
+                    <td>
+                        <form action="{{ route('form.destroy', $forms->id)}}" method="post">
+                          @csrf
+                          @method('DELETE')
+                          <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

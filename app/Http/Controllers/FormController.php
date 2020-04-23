@@ -66,7 +66,7 @@ class FormController extends Controller
     public function edit($id)
     {
         $forms = \App\Form::find($id);
-        return view('edit', ['forms'=> $forms]);
+        return view('edit')->with('forms', $forms);
         
     }
 
@@ -83,7 +83,6 @@ class FormController extends Controller
             'name'=>'required',
             'email'=>'required',
         ]);
-
         $forms = \App\Form::find($id);
         $forms->name =  $request->get('name');
         $forms->email = $request->get('email');
@@ -91,7 +90,6 @@ class FormController extends Controller
 
         return redirect('forms')->with('success', 'Contact updated!');
     }
-}
 
     /**
      * Remove the specified resource from storage.
@@ -99,13 +97,15 @@ class FormController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-      function destroy($id)
+      public function destroy($id)
     {
+
         $forms = \App\Form::find($id);
         $forms->delete();
 
         return redirect('forms')->with('success', 'Contact deleted!');
     }
+}
 
     
 

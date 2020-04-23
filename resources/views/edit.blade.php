@@ -18,7 +18,9 @@
 
 <div class="container">
   <h2 class="text-center">Edit Page</h2>
-  <form method="post" action="/update">
+<form method="post" action="/forms/{{$forms->id}}">
+  <input type="hidden" name="_method" value="put">
+
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" placeholder="name" name="name" required value = "{{$forms->name}}">
@@ -27,7 +29,6 @@
       <label for="email">Email:</label>
       <input type="email" class="form-control"placeholder="Enter email" name="email" required value = "{{$forms->email}}">
     </div>
-    @method('PUT')
     {{csrf_field()}}
     <input type="hidden" name="id" value = "{{$forms->id}}">
     <button type="submit" class="btn btn-primary">Submit</button>
