@@ -24,7 +24,6 @@
             <td>Name</td>
             <td>Email</td>
             <td>Time</td>
-            <td>Likes Count</td>
         </thead>
         <tbody>
             @foreach ($allforms as $forms)
@@ -33,9 +32,7 @@
                     <td class="inner-table">{{ $forms->name }}</td>
                     <td class="inner-table">{{ $forms->email }}</td>
                     <td class="inner-table">{{ $forms->created_at->diffForHumans() }}</td>
-                    <td class="inner-table"><button class="btn btn-info">{{ $forms->likes_count }}</button></td>
                     <td><a href="{{action('FormController@edit', $forms['id'])}}" class="btn btn-warning">Edit</a></td>
-                    
                     <td>
                         <form action="{{ route('form.destroy', $forms->id)}}" method="post">
                           @csrf
@@ -48,4 +45,6 @@
         </tbody>
     </table>
 @endsection
+
+
 
